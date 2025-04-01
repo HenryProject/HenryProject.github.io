@@ -7,6 +7,46 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+        /* Modal Dialog Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: #f8f9fa;
+            margin: 15% auto;
+            padding: 25px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        .modal-btn {
+            background-color: #6e48aa;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .modal-btn:hover {
+            background-color: #4b2e83;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -27,12 +67,44 @@
                     <a href="https://github.com/HenryProject" target="_blank" class="btn">
                         <i class="fab fa-github"></i> GitHub Profile
                     </a>
-                    <a href="/iptv/index.m3u" class="btn">
-                        <i class="fas fa-tv"></i> TestApp
-                    </a>
                 </div>
             </section>
         </main>
+                <main>
+            <div class="project-card" onclick="showComingSoon()">
+                <h2>TestApp</h2>
+                <p>Click to view project</p>
+            </div>
+            
+            <!-- Add more project cards as needed -->
+        </main>
+        
+            <div id="comingSoonModal" class="modal">
+        <div class="modal-content">
+            <h2>🚧 Coming Soon! 🚧</h2>
+            <p>This project isn't ready yet, but amazing things are coming!</p>
+            <p>Check back later for updates.</p>
+            <button class="modal-btn" onclick="closeModal()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function showComingSoon() {
+            document.getElementById('comingSoonModal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('comingSoonModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('comingSoonModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
         
         <footer>
             <p>© 2024 HenryProject | Powered by GitHub Pages</p>
