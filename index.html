@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My GitHub Page</title>
+    <title>HenryProject's GitHub Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,7 +12,7 @@
     <div class="container">
         <header>
             <h1>👋 Hello, I'm <span class="highlight">HenryProject</span></h1>
-            <p class="subtitle">Welcome to my GitHub Pages site!</p>
+            <p class="subtitle">Welcome to my GitHub Pages portfolio</p>
         </header>
         
         <main>
@@ -22,36 +22,61 @@
             </section>
             
             <section class="card">
+                <h2><i class="fas fa-project-diagram"></i> My Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card" onclick="showComingSoon()">
+                        <div class="project-icon">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <h3>TestApp</h3>
+                        <p>My test application project</p>
+                        <div class="project-badge">Coming Soon</div>
+                    </div>
+                    
+                    <!-- Add more project cards as needed -->
+                </div>
+            </section>
+            
+            <section class="card">
                 <h2><i class="fas fa-link"></i> Quick Links</h2>
                 <div class="links">
                     <a href="https://github.com/HenryProject" target="_blank" class="btn">
                         <i class="fab fa-github"></i> GitHub Profile
                     </a>
-                    <a class="btn"	onclick="showComingSoon()" >
-                        <i class="fas fa-tv"></i> TProject
+                    <a href="#" class="btn" onclick="showComingSoon(); return false;">
+                        <i class="fas fa-code"></i> Other Projects
                     </a>
-
                 </div>
             </section>
         </main>
         
-            <!-- Modal Dialog -->
+        <footer>
+            <p>© 2024 HenryProject | Powered by GitHub Pages</p>
+        </footer>
+    </div>
+
+    <!-- Modal Dialog -->
     <div id="comingSoonModal" class="modal">
         <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-hourglass-half"></i>
+            </div>
             <h2>🚧 Coming Soon! 🚧</h2>
-            <p>This project isn't ready yet, but amazing things are coming!</p>
-            <p>Check back later for updates.</p>
-            <button class="modal-btn" onclick="closeModal()">OK</button>
+            <p>This project is currently in development.</p>
+            <p>Exciting things are on the way - please check back later!</p>
+            <button class="modal-btn" onclick="closeModal()">Got It!</button>
         </div>
     </div>
 
     <script>
         function showComingSoon() {
             document.getElementById('comingSoonModal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
         }
         
         function closeModal() {
             document.getElementById('comingSoonModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
         }
         
         // Close modal when clicking outside of it
@@ -62,10 +87,5 @@
             }
         }
     </script>
-        
-        <footer>
-            <p>© 2024 HenryProject | Powered by GitHub Pages</p>
-        </footer>
-    </div>
 </body>
 </html>
